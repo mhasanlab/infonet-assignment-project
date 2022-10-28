@@ -1,0 +1,63 @@
+<mat-card class="card-container">
+  <mat-card-header>
+    <mat-card-title class="card-title">
+      Person Infomation
+    </mat-card-title>
+    <span class="filter">
+      <a [routerLink]="['/personinfo-create']" mat-mini-fab color="primary"><mat-icon>add</mat-icon></a>
+    </span>
+  </mat-card-header>
+  <mat-card-content>
+    <mat-divider></mat-divider>
+    <div class="table-container">
+      <mat-table [dataSource]="dataSource" matSort>
+        <!--<ng-container matColumnDef="picture">
+    <mat-header-cell *matHeaderCellDef mat-sort-header>Picture</mat-header-cell>
+    <mat-cell *matCellDef="let element">
+      <img class="row-image" src="/Uploads/{{element.picture}}" />
+    </mat-cell>
+  </ng-container>-->
+        <ng-container matColumnDef="personalInfoId">
+          <mat-header-cell *matHeaderCellDef mat-sort-header>#</mat-header-cell>
+          <mat-cell *matCellDef="let element">{{element.personalInfoId}}</mat-cell>
+        </ng-container>
+        <ng-container matColumnDef="name">
+          <mat-header-cell *matHeaderCellDef mat-sort-header>Name</mat-header-cell>
+          <mat-cell *matCellDef="let element">{{element.name}}</mat-cell>
+        </ng-container>
+        <ng-container matColumnDef="countryId">
+          <mat-header-cell *matHeaderCellDef mat-sort-header>Country</mat-header-cell>
+          <mat-cell *matCellDef="let element">{{getCountryName(element.countryId)}}</mat-cell>
+        </ng-container>
+        <ng-container matColumnDef="cityId">
+          <mat-header-cell *matHeaderCellDef mat-sort-header>City</mat-header-cell>
+          <mat-cell *matCellDef="let element">{{getCityName(element.cityId)}}</mat-cell>
+        </ng-container>
+        <ng-container matColumnDef="languageSkills">
+          <mat-header-cell *matHeaderCellDef mat-sort-header>Name</mat-header-cell>
+          <mat-cell *matCellDef="let element">{{element.languageSkills}}</mat-cell>
+        </ng-container>
+        <ng-container matColumnDef="dateOfBirth">
+          <mat-header-cell *matHeaderCellDef mat-sort-header>Date Of Birth</mat-header-cell>
+          <mat-cell *matCellDef="let element">{{element.dateOfBirth|date:'MMM dd,yyyy'}}</mat-cell>
+        </ng-container>
+        <ng-container matColumnDef="resumeUpload">
+          <mat-header-cell *matHeaderCellDef mat-sort-header>Picture</mat-header-cell>
+          <mat-cell *matCellDef="let element">{{element.resumeUpload}}</mat-cell>
+        </ng-container>
+        <ng-container matColumnDef="actions">
+          <mat-header-cell *matHeaderCellDef></mat-header-cell>
+          <mat-cell *matCellDef="let element">
+            <button mat-icon-button [routerLink]="['/personinfo-edit',element.personalInfoId]"><mat-icon>edit</mat-icon></button>
+            <button mat-icon-button color="warn" (click)="confirmDelete(element)"><mat-icon>delete</mat-icon></button>
+          </mat-cell>
+        </ng-container>
+        <mat-header-row *matHeaderRowDef="columnList"></mat-header-row>
+        <mat-row *matRowDef="let row; columns:columnList"></mat-row>
+      </mat-table>
+      <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]" [pageSize]="5" showFirstLastButtons>
+      </mat-paginator>
+    </div>
+  </mat-card-content>
+</mat-card>
+

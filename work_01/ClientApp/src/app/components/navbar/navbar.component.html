@@ -1,0 +1,10 @@
+<mat-toolbar color="accent">
+  <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
+    <mat-icon>menu</mat-icon>
+  </button>
+  <span>Personal Info</span>
+  <span class="example-spacer"></span>
+  <a mat-button [routerLink]="['/home']">Home</a>
+  <a mat-button [routerLink]="['/personinfo-view']">Personal Info</a>
+</mat-toolbar>
+<router-outlet></router-outlet>
