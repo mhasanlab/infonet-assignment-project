@@ -12,7 +12,7 @@
     <div class="table-container">
       <mat-table [dataSource]="dataSource" matSort>
         <!--<ng-container matColumnDef="picture">
-    <mat-header-cell *matHeaderCellDef mat-sort-header>Picture</mat-header-cell>
+    <mat-header-cell *matHeaderCellDef mat-sort-header>Resume</mat-header-cell>
     <mat-cell *matCellDef="let element">
       <img class="row-image" src="/Uploads/{{element.picture}}" />
     </mat-cell>
@@ -22,7 +22,7 @@
           <mat-cell *matCellDef="let element">{{element.personalInfoId}}</mat-cell>
         </ng-container>
         <ng-container matColumnDef="name">
-          <mat-header-cell *matHeaderCellDef mat-sort-header>Name</mat-header-cell>
+          <mat-header-cell *matHeaderCellDef mat-sort-header>Full Name</mat-header-cell>
           <mat-cell *matCellDef="let element">{{element.name}}</mat-cell>
         </ng-container>
         <ng-container matColumnDef="countryId">
@@ -34,7 +34,7 @@
           <mat-cell *matCellDef="let element">{{getCityName(element.cityId)}}</mat-cell>
         </ng-container>
         <ng-container matColumnDef="languageSkills">
-          <mat-header-cell *matHeaderCellDef mat-sort-header>Name</mat-header-cell>
+          <mat-header-cell *matHeaderCellDef mat-sort-header>Language</mat-header-cell>
           <mat-cell *matCellDef="let element">{{element.languageSkills}}</mat-cell>
         </ng-container>
         <ng-container matColumnDef="dateOfBirth">
@@ -42,7 +42,7 @@
           <mat-cell *matCellDef="let element">{{element.dateOfBirth|date:'MMM dd,yyyy'}}</mat-cell>
         </ng-container>
         <ng-container matColumnDef="resumeUpload">
-          <mat-header-cell *matHeaderCellDef mat-sort-header>Picture</mat-header-cell>
+          <mat-header-cell *matHeaderCellDef mat-sort-header>Resume</mat-header-cell>
           <mat-cell *matCellDef="let element">{{element.resumeUpload}}</mat-cell>
         </ng-container>
         <ng-container matColumnDef="actions">
